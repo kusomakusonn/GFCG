@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343aa7f169896a740a1393b1fa1b7a14, type: 3}
+  m_Name: Card3
+  m_EditorClassIdentifier: 
+  cardId: 3
+  name: "\u30A2\u30B5\u30EB\u30C8\u30E9\u30A4\u30D5\u30EB"
+  effect: "\u3057\u306D\u3047"
+  icon: {fileID: 0}
+  kinds:
+    gun: 1
+    senryaku: 0
+  elements:
+    gunElements:
+      power: 3
+      hituyousuu: 2
+      kaisuujougenn: 1
+      nibasukoka: 1
+      ura: {fileID: 0}
+    senryakuElements:
+      ikenie: 0

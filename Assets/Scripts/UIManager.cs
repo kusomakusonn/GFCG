@@ -14,3 +14,5 @@ public class UIManager : MonoBehaviour
         enemyAmmunitionText.text = BattleStatus.enemyAmmunition.ToString();
     }
 }
+
+//test

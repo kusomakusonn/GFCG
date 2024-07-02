@@ -16,6 +16,7 @@ public class CreateAmmunition : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         if(isPlayerAmmunition == BattleStatus.isPlayerTurn)

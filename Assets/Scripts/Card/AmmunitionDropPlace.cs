@@ -6,12 +6,22 @@ using UnityEngine.EventSystems;
 public class AmmunitionDropPlace : MonoBehaviour, IDropHandler
 {
     [SerializeField] Transform attachField;
+    private CardController cardI;
+
+    private void Awake()
+    {
+        cardI = GetComponent<CardController>();
+    }
+    
     public void OnDrop(PointerEventData eventData)
     {
-        CreateAmmunition card = eventData.pointerDrag.GetComponent<CreateAmmunition>();
-        if(card != null)
+        if(cardI.model.place == CardModel.Place.Field)
         {
-            card.ammunitionCardParent = transform.Find("AttachField").transform;
+            CreateAmmunition ammunition = eventData.pointerDrag.GetComponent<CreateAmmunition>();
+            if(ammunition != null)
+            {
+                ammunition.ammunitionCardParent = transform.Find("AttachField").transform;
+            }
         }
     }
 }

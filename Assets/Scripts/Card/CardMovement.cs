@@ -19,6 +19,18 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         {
             if(card.model.kinds.gun)
             {
+                CardController[] fieldCardList;
+                if(BattleStatus.isPlayerTurn)
+                {
+                    fieldCardList = GameObject.Find("PlayerField").GetComponentsInChildren<CardController>();
+                }else
+                {
+                    fieldCardList = GameObject.Find("EnemyField").GetComponentsInChildren<CardController>();
+                }
+                foreach(CardController card in fieldCardList)
+                {
+                    card.GetComponent<CanvasGroup>().blocksRaycasts = false;
+                }
                 cardParent = transform.parent;
                 transform.SetParent(cardParent.root, false);
                 GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -43,6 +55,18 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         {
             if(card.model.kinds.gun)
             {
+                CardController[] fieldCardList;
+                if(BattleStatus.isPlayerTurn)
+                {
+                    fieldCardList = GameObject.Find("PlayerField").GetComponentsInChildren<CardController>();
+                }else
+                {
+                    fieldCardList = GameObject.Find("EnemyField").GetComponentsInChildren<CardController>();
+                }
+                foreach(CardController card in fieldCardList)
+                {
+                    card.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                }
                 transform.SetParent(cardParent, false);
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
             }

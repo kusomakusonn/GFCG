@@ -12,10 +12,10 @@ public class AmmunitionDropPlace : MonoBehaviour, IDropHandler
     {
         cardI = GetComponent<CardController>();
     }
-    
+
     public void OnDrop(PointerEventData eventData)
     {
-        if(cardI.model.place == CardModel.Place.Field)
+        if(cardI.model.place == CardModel.Place.Field && cardI.model.isPlayerCard == BattleStatus.isPlayerTurn)
         {
             CreateAmmunition ammunition = eventData.pointerDrag.GetComponent<CreateAmmunition>();
             if(ammunition != null)

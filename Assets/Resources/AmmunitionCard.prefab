@@ -315,9 +315,10 @@ GameObject:
   - component: {fileID: 550896558035769070}
   - component: {fileID: 5564075940270070601}
   - component: {fileID: -6897264009709590029}
+  - component: {fileID: 2411334228261046797}
   m_Layer: 5
   m_Name: AmmunitionCard
-  m_TagString: Untagged
+  m_TagString: Ammunition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,6 +367,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2411334228261046797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848115315075447387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365a79503eb2c0d4faaaad4b43108026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4870959555155329647
 GameObject:
   m_ObjectHideFlags: 0

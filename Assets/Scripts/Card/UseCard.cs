@@ -22,8 +22,7 @@ public class UseCard : MonoBehaviour
             {
                 if(card.model.place == CardModel.Place.Field)
                 {
-                    Debug.Log("Attack!");
-                    gameManager.GunAttack(card.model);
+                    gameManager.GunAttack(card.model, transform.Find("AttachField").gameObject);
                 }
             }
             if(card.model.kinds.senryaku)

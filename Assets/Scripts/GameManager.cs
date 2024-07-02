@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -46,7 +48,6 @@ public class GameManager : MonoBehaviour
     }
     void PlayerTurn()
     {
-        Debug.Log("Playerのターン");
         CardController[] fieldCardList = playerField.GetComponentsInChildren<CardController>();
         foreach(CardController card in fieldCardList)
         {
@@ -59,7 +60,6 @@ public class GameManager : MonoBehaviour
     }
     void EnemyTurn()
     {
-        Debug.Log("Enemyのターン");
         CardController[] fieldCardList = enemyField.GetComponentsInChildren<CardController>();
         foreach(CardController card in fieldCardList)
         {
@@ -93,45 +93,52 @@ public class GameManager : MonoBehaviour
     {
         //Instantiate(ammunition, place);
     }
-    public void GunAttack(CardModel model)
+    public void GunAttack(CardModel model, GameObject attachField)
     {
-        if(CanAttack(model))
+        if(CanAttack(model, attachField))
         {
             if(model.gunElements.kaisuuJougenn != -1)
             {
                 model.gunElements.kaisuu += 1;
             }
+            int destroy = 0;
+            for(int i = 0; i < attachField.transform.childCount; i++)
+            {
+                if(attachField.transform.GetChild(i).CompareTag("Ammunition"))
+                {
+                    Destroy(attachField.transform.GetChild(i).gameObject);
+                    destroy += 1;
+                }
+                if(destroy >= model.gunElements.power)
+                {
+                    break;
+                }
+            }
             if(model.isPlayerCard)
             {
-                BattleStatus.playerAmmunition -= model.gunElements.hituyousuu;
                 BattleStatus.enemyHP -= model.gunElements.power;
             }else
             {
-                BattleStatus.enemyAmmunition -= model.gunElements.hituyousuu;
                 BattleStatus.playerHP -= model.gunElements.power;
             }
             uIManager.Show();
         }
-        bool CanAttack(CardModel model)
+        bool CanAttack(CardModel model, GameObject attachField)
         {
-            if(model.isPlayerCard)
+            int ammunition = 0;
+            for(int i = 0; i < attachField.transform.childCount; i++)
             {
-                if(BattleStatus.playerAmmunition >= model.gunElements.hituyousuu && model.gunElements.kaisuu < model.gunElements.kaisuuJougenn)
+                if(attachField.transform.GetChild(i).CompareTag("Ammunition"))
                 {
-                    return true;
-                }else
-                {
-                    return false;
+                    ammunition += 1;
                 }
+            }
+            if(ammunition >= model.gunElements.hituyousuu && model.gunElements.kaisuu < model.gunElements.kaisuuJougenn)
+            {
+                return true;
             }else
             {
-                if(BattleStatus.enemyAmmunition >= model.gunElements.hituyousuu && model.gunElements.kaisuu < model.gunElements.kaisuuJougenn)
-                {
-                    return true;
-                }else
-                {
-                    return false;
-                }
+                return false;
             }
         }
     }

@@ -104,14 +104,14 @@ public class GameManager : MonoBehaviour
             int destroy = 0;
             for(int i = 0; i < attachField.transform.childCount; i++)
             {
+                if(destroy >= model.gunElements.hituyousuu)
+                {
+                    break;
+                }
                 if(attachField.transform.GetChild(i).CompareTag("Ammunition"))
                 {
                     Destroy(attachField.transform.GetChild(i).gameObject);
                     destroy += 1;
-                }
-                if(destroy >= model.gunElements.hituyousuu)
-                {
-                    break;
                 }
             }
             if(model.isPlayerCard)

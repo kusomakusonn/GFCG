@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
                     Destroy(attachField.transform.GetChild(i).gameObject);
                     destroy += 1;
                 }
-                if(destroy >= model.gunElements.power)
+                if(destroy >= model.gunElements.hituyousuu)
                 {
                     break;
                 }

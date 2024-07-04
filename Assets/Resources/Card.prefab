@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 8332302308525779348}
   - component: {fileID: 4135622216555461374}
   - component: {fileID: 3539413989386523729}
-  - component: {fileID: 5485320434072141091}
   m_Layer: 5
   m_Name: AttachField
   m_TagString: Untagged
@@ -149,18 +148,6 @@ MonoBehaviour:
   m_Spacing: {x: -100, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!210 &5485320434072141091
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654630843064492325}
-  m_Enabled: 1
-  m_SortingLayerID: 6657845
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &2110642510792607672
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +464,6 @@ GameObject:
   - component: {fileID: 5564075940270070601}
   - component: {fileID: -6897264009709590029}
   - component: {fileID: -5854134710475577056}
-  - component: {fileID: 8391533575171732277}
   - component: {fileID: -5625073473257005694}
   - component: {fileID: 8760619501082891859}
   - component: {fileID: -162077045025789228}
@@ -502,12 +488,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8332302308525779348}
   - {fileID: 4984995004539571060}
   - {fileID: 3055285298648876890}
   - {fileID: 3485651540743495368}
   - {fileID: 4727885857129188885}
   - {fileID: 7484603191394402415}
-  - {fileID: 8332302308525779348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -591,18 +577,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!210 &8391533575171732277
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4848115315075447387}
-  m_Enabled: 1
-  m_SortingLayerID: 1136288347
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!114 &-5625073473257005694
 MonoBehaviour:
   m_ObjectHideFlags: 0
